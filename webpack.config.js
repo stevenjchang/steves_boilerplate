@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlPlugin = new HtmlWebpackPlugin({
   template: "./client/src/index.html",
-  filename: "./index.html"
+  filename: "../index.html"
 });
 
  module.exports = {
