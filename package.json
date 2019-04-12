@@ -1,14 +1,17 @@
 {
   "name": "steves_boilerplate",
-  "version": "2.0",
+  "version": "2.0.0",
   "description": "Javascript minimalist full stack boilerplate, with different branches for variations, such as with PostgreSQL vs MongoDB, with or without Redux",
   "main": "index.js",
   "repository": "git@github.com:stevenjchang/steves_boilerplate.git",
   "author": "stevenjchang <stevenjchang@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "npm run build && node server/index.js",
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
+    "server": "nodemon server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "html-webpack-plugin": "^3.2.0",
@@ -20,6 +23,8 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
