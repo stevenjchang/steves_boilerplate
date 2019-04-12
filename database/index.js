@@ -1,7 +1,3 @@
-const config = require('../knexfile.js');
-const env = process.env.NODE_ENV || 'development';
-const knex = require('knex')(config[env]);
+const client = require('./elephantsql');
 
-module.exports = knex;
-
-knex.migrate.latest([config]);
+module.exports = client;
