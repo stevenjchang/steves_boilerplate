@@ -27,4 +27,9 @@ const HtmlPlugin = new HtmlWebpackPlugin({
     ]
   },
   plugins: [HtmlPlugin],
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    port: 3001
+  }
 };
