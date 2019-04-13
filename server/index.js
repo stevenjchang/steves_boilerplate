@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const db = require('./databaseInteractor/index');
+const db = require('./databaseInteractor/knex');
 const IP = process.env.IP || 'localhost';
 const PORT = process.env.PORT || '3000';
 const app = express();
