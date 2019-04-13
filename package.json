@@ -8,10 +8,10 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "npm run build && node server/index.js",
-    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
+    "start": "yarn run build && node server/index.js",
+    "client": "webpack-dev-server --mode development --entry ./client/src/index.js --output-filename ./public/dist/bundle.js --devtool inline-source-map --hot --open 'Google Chrome'",
     "server": "nodemon server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "dependencies": {
     "dotenv": "^7.0.0",
