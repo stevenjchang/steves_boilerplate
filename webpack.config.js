@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -10,8 +11,10 @@ const HtmlPlugin = new HtmlWebpackPlugin({
   entry: './client/src/index.js',
   output: {
     path: path.join(__dirname, '/public/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    // publicPath: '/'
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -26,10 +29,18 @@ const HtmlPlugin = new HtmlWebpackPlugin({
       }
     ]
   },
-  plugins: [HtmlPlugin],
+  plugins: [
+    HtmlPlugin,
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    port: 3001
+    port: 3001,
+    // hot: true,
+    // publicPath: path.join(__dirname, '/public/dist/'),
+    historyApiFallback: true,
+    // index: path.join(__dirname, 'public/index.html')
   }
 };
