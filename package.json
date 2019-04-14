@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "npm run build && node server/index.js",
-    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
-    "server": "nodemon server/index.js",
+    "start": "yarn run build && node server/index.js",
+    "client": "webpack --watch --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
+    "server": "node server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
@@ -19,7 +19,8 @@
     "knex": "^0.16.5",
     "pg": "^7.9.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

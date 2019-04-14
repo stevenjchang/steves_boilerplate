@@ -1,16 +1,18 @@
+const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const HtmlPlugin = new HtmlWebpackPlugin({
+const HtmlPlugin = new HtmlWebPackPlugin({
   template: "./client/src/index.html",
-  filename: "../index.html"
+  filename: "./index.html"
 });
 
  module.exports = {
   entry: './client/src/index.js',
   output: {
     path: path.join(__dirname, '/public/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    // publicPath: 'public/dist'
   },
   module: {
     rules: [
@@ -26,10 +28,19 @@ const HtmlPlugin = new HtmlWebpackPlugin({
       }
     ]
   },
-  plugins: [HtmlPlugin],
+  plugins: [
+    HtmlPlugin,
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'public/dist'),
     compress: true,
-    port: 3001
+    port: 3001,
+    stats: 'errors-only',
+    // hot: true,
+    publicPath: path.join(__dirname, 'public/dist'),
+    historyApiFallback: true,
+    // index: path.join(__dirname, 'public/index.html')
   }
 };

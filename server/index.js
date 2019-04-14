@@ -6,7 +6,7 @@ const IP = process.env.IP || 'localhost';
 const PORT = process.env.PORT || '3000';
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public/dist')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
