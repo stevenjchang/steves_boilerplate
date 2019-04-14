@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-// import instagram from './instagram';
+import posts from './posts';
 
 const rootReducer = combineReducers({
-  // instagram,
+  posts,
 });
 
 export default rootReducer;
