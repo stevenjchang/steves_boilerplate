@@ -35,12 +35,11 @@ const HtmlPlugin = new HtmlWebPackPlugin({
   ],
   devServer: {
     contentBase: path.join(__dirname, 'public/dist'),
-    // contentBase: 'dist',
     compress: true,
     port: 3001,
     stats: 'errors-only',
     // hot: true,
-    publicPath: path.join(__dirname, '/'),
+    publicPath: path.join(__dirname, 'public/dist'),
     historyApiFallback: true,
     // index: path.join(__dirname, 'public/index.html')
   }

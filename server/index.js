@@ -11,12 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/db', db.selectTestTable);
-app.get('/dba', function(req, res) {
-  // res.sendFile(path.join(__dirname, '../public/index.html'), function(err, result) {
-  //   console.log('err, res ==>', err, res);
-  // })
-});
-
 
 app.listen(PORT, (err) => {
   if (err) { return console.log('Error occurred in server/index.js =>', err); }
