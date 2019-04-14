@@ -9,10 +9,10 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "yarn run build && node server/index.js",
-    "client": "webpack --watch --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
+    "client:watch": "webpack --watch --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
+    "client:dev-server": "webpack-dev-server --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
     "server": "node server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "devserver": "webpack-dev-server --mode development --devtool inline-source-map --hot --open 'Google Chrome'"
+    "dev": "concurrently \"yarn server\" \"yarn client:dev-server\""
   },
   "dependencies": {
     "axios": "^0.18.0",
