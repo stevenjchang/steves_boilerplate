@@ -39,7 +39,7 @@ const HtmlPlugin = new HtmlWebPackPlugin({
     port: 3001,
     stats: 'errors-only',
     // hot: true,
-    publicPath: path.join(__dirname, 'public/dist'),
+    // publicPath: path.join(__dirname, '/'),
     historyApiFallback: true,
     // index: path.join(__dirname, 'public/index.html')
   }
