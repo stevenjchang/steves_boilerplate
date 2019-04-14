@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
   render() {
     return (
       <div>
-        <Link to={'list'}>
-          <button variant="raised">My List</button>
+        <Link to={'posts'}>
+          <button variant="raised">Show Posts</button>
         </Link>
       </div>
     );
