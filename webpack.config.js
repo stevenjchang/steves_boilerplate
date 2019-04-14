@@ -12,7 +12,6 @@ const HtmlPlugin = new HtmlWebPackPlugin({
   output: {
     path: path.join(__dirname, '/public/dist'),
     filename: 'bundle.js',
-    // publicPath: 'public/dist'
   },
   module: {
     rules: [
@@ -38,9 +37,6 @@ const HtmlPlugin = new HtmlWebPackPlugin({
     compress: true,
     port: 3001,
     stats: 'errors-only',
-    // hot: true,
-    // publicPath: path.join(__dirname, '/'),
     historyApiFallback: true,
-    // index: path.join(__dirname, 'public/index.html')
   }
 };
