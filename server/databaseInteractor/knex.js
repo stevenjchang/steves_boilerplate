@@ -7,6 +7,15 @@ const selectTestTable = () => {
   })
 }
 
+const getPosts = (req, res) => {
+  knex.select().from('sample_posts')
+  .then((result) => {
+    console.log('result ==>', result);
+    res.status(200).send(result);
+  })
+}
+
 module.exports = {
-  selectTestTable
+  selectTestTable,
+  getPosts,
 };
