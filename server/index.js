@@ -11,8 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/posts', db.getPosts);
-
 app.get('/db', db.selectTestTable);
+app.get('/api', (req, res) => {
+  res.status(200).send('you hit /api')
+})
 
 app.listen(PORT, (err) => {
   if (err) { return console.log('Error occurred in server/index.js =>', err); }
