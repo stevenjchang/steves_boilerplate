@@ -44,5 +44,13 @@ const HtmlPlugin = new HtmlWebPackPlugin({
     port: 3001,
     stats: 'errors-only',
     historyApiFallback: true,
+    proxy: {
+      '/api': {
+          target: 'http://[::1]:3000/', // [::1], not localhost. this trick took forever to figure out
+          secure: false,
+          changeOrigin: true,
+          logLevel: 'debug',
+      }
+    }
   }
 };
