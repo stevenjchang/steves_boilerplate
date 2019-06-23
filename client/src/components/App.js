@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import Login from './Login';
+
  class App extends Component {
   
   testProxy() {
@@ -12,7 +14,8 @@ import axios from 'axios';
 
   render() {
     return (
-      <div>
+      <>
+        <Login />
         <Link to={'posts'}>
           <button variant="raised">Show Posts</button>
         </Link>
@@ -21,7 +24,7 @@ import axios from 'axios';
         >
           Test Proxy
         </button>
-      </div>
+      </>
     );
   }
 }
