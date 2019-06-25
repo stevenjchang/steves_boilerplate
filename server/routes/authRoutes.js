@@ -12,15 +12,10 @@ router.get("/logout", (req, res) => {
   res.send("logging out");
 });
 
-router.get('/google', (req, res) => {
-  
-  res.send('heyyo')
-})
-
 // auth with google+
-// router.get('/google', passport.authenticate('google', {
-//     scope: ['profile']
-// }));
+router.get('/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
 
 // callback route for google to redirect to
 router.get('/google/redirect', (req, res) => {
