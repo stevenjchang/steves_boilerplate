@@ -11,7 +11,7 @@
     "start": "yarn run build && node server/index.js",
     "client:watch": "webpack --watch --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
     "client:dev-server": "webpack-dev-server --mode development --devtool inline-source-map --hot --open 'Google Chrome'",
-    "server": "node server/index.js",
+    "server": "nodemon server/index.js",
     "dev": "concurrently \"yarn server\" \"yarn client:dev-server\""
   },
   "dependencies": {
